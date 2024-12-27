@@ -2,12 +2,13 @@ import { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge'
 
 interface SectionProps {
-    className: string;
+    id: string;
+    className?: string;
 }
 
-export function Section({ className, children }: PropsWithChildren<SectionProps>) {
+export function Section({ className, children, id }: PropsWithChildren<SectionProps>) {
     return (
-        <section className={twMerge('w-full h-full', className)}>
+        <section id={id} className={twMerge('w-full min-h-full p-4 flex items-center justify-center text-center', className)}>
             {children}
         </section>
     )
